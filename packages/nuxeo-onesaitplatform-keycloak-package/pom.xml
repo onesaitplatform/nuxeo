@@ -8,12 +8,12 @@
 
   <artifactId>nuxeo-onesaitplatform-keycloak-package</artifactId>
   <packaging>zip</packaging>
-  <name>Nuxeo Keycloack Package</name>
+  <name>Nuxeo Onesait Platform Keycloack Package</name>
 
   <dependencies>
     <dependency>
       <groupId>org.nuxeo.ecm.platform</groupId>
-      <artifactId>nuxeo-platform-login-keycloak</artifactId>
+      <artifactId>nuxeo-platform-login-onesaitplatform-keycloak</artifactId>
     </dependency>
   </dependencies>
 </project>

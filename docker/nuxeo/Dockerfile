@@ -137,7 +137,7 @@ VOLUME /var/log/nuxeo
 VOLUME /tmp
 
 COPY nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip /tmp/nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip
-COPY nuxeo-keycloak-package-2023.14-SNAPSHOT.zip /tmp/nuxeo-keycloak-package-2023.14-SNAPSHOT.zip
+COPY nuxeo-onesaitplatform-keycloak-package-2023.20-SNAPSHOT.zip /tmp/nuxeo-onesaitplatform-keycloak-package-2023.20-SNAPSHOT.zip
 COPY onlyoffice-nuxeo-package-2.1.0.zip /tmp/onlyoffice-nuxeo-package-2.1.0.zip
 COPY docker-entrypoint.sh /
 COPY --chown=900:0 nuxeo.conf /etc/nuxeo/nuxeo.conf.template
@@ -148,7 +148,7 @@ COPY postgresql-42.7.5.jar $NUXEO_HOME/lib/postgresql-42.7.5.jar
 
 ENV NUXEO_URL=https://development.onesaitplatform.com/nuxeo \
     NUXEO_KEYCLOAK_REALM=onesaitplatform \
-    NUXEO_KEYCLOAK_AUTHSERVERURL=http://development.onesaitplatform.com/auth \
+    NUXEO_KEYCLOAK_AUTHSERVERURL=https://development.onesaitplatform.com/auth \
     NUXEO_KEYCLOAK_RESOURCE=onesaitplatform \
     NUXEO_KEYCLOAK_PUBLICCLIENT=false \
     NUXEO_KEYCLOAK_CREDENTIALS_SECRET=onesaitplatform \
