@@ -164,7 +164,7 @@ ENV NUXEO_URL=https://development.onesaitplatform.com/nuxeo \
     NUXEO_DB_MAX_POOL_SIZE=30 \
     NUXEO_VCS_MIN_POOL_SIZE=3 \
     NUXEO_VCS_MAX_POOL_SIZE=20 \
-    NUXEO_PACKAGES="/tmp/nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip /tmp/nuxeo-keycloak-package-2023.14-SNAPSHOT.zip" \
+    NUXEO_PACKAGES="/tmp/nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip /tmp/nuxeo-onesaitplatform-keycloak-package-2023.20-SNAPSHOT.zip" \
     ADMINISTRATORS_MAPPING_PLATFORM_ROLES=ROLE_ADMINISTRATOR,ROLE_PLATFORM_ADMIN \
     MEMBERS_MAPPING_PLATFORM_ROLES=ROLE_DATASCIENTIST,ROLE_DATAVIEWER,ROLE_DEVELOPER,ROLE_PARTNER,ROLE_USE
 
