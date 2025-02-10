@@ -138,12 +138,14 @@ VOLUME /tmp
 
 COPY nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip /tmp/nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip
 COPY nuxeo-onesaitplatform-keycloak-package-2023.20-SNAPSHOT.zip /tmp/nuxeo-onesaitplatform-keycloak-package-2023.20-SNAPSHOT.zip
+COPY nuxeo-onesaitplatform-segittur-keycloak-package-2023.20-SNAPSHOT.zip /tmp/nuxeo-onesaitplatform-segittur-keycloak-package-2023.20-SNAPSHOT.zip
 COPY onlyoffice-nuxeo-package-2.1.0.zip /tmp/onlyoffice-nuxeo-package-2.1.0.zip
 COPY docker-entrypoint.sh /
 COPY --chown=900:0 nuxeo.conf /etc/nuxeo/nuxeo.conf.template
 COPY mysql-connector-j-8.4.0.jar $NUXEO_HOME/lib/mysql-connector-j-8.4.0.jar
 COPY mariadb-java-client-3.5.1.jar $NUXEO_HOME/lib/mariadb-java-client-3.5.1.jar
 COPY postgresql-42.7.5.jar $NUXEO_HOME/lib/postgresql-42.7.5.jar
+COPY log4j2.xml $NUXEO_HOME/lib/log4j2.xml
 
 
 ENV NUXEO_URL=https://development.onesaitplatform.com/nuxeo \
@@ -165,9 +167,15 @@ ENV NUXEO_URL=https://development.onesaitplatform.com/nuxeo \
     NUXEO_VCS_MIN_POOL_SIZE=3 \
     NUXEO_VCS_MAX_POOL_SIZE=20 \
     NUXEO_PACKAGES="/tmp/nuxeo-web-ui-marketplace-3.1.16-SNAPSHOT.zip /tmp/nuxeo-onesaitplatform-keycloak-package-2023.20-SNAPSHOT.zip" \
-    INITIAL_JAVA_OPTS="-Xms256m -Xmx1g -XX:MaxMetaspaceSize=128m" \
-    ADMINISTRATORS_MAPPING_PLATFORM_ROLES=ROLE_ADMINISTRATOR,ROLE_PLATFORM_ADMIN \
-    MEMBERS_MAPPING_PLATFORM_ROLES=ROLE_DATASCIENTIST,ROLE_DATAVIEWER,ROLE_DEVELOPER,ROLE_PARTNER,ROLE_USE
+    INITIAL_JAVA_OPTS="-Xms256m -Xmx1g" \
+    ONESAITPLATFORM_CONFIG_JDBC_URL_ENV=jdbc:mysql://configdb:3306/onesaitplatform_config \
+    ONESAITPLATFORM_CONFIG_JDBC_USER_ENV=root \
+    ONESAITPLATFORM_CONFIG_JDBC_PASSWORD_ENV=changeIt! \
+    ONESAITPLATFORM_CONFIG_JDBC_DRIVER_ENV=com.mysql.cj.jdbc.Driver \
+    ADMINISTRATORS_MAPPING_PLATFORM_ROLES=ROLE_ADMINISTRATOR,ROLE_PLATFORM_ADMIN,ADMINISTRADOR_PID,GESTOR_PID \
+    MEMBERS_MAPPING_PLATFORM_ROLES=ROLE_DATASCIENTIST,ROLE_DATAVIEWER,ROLE_DEVELOPER,ROLE_PARTNER,ROLE_USER \
+    SERVICE_NAME_MAPPING_PLATFORM_ROLES_ENV=GESTOR_SERVICIO \
+    DESTINATION_NAME_MAPPING_PLATFORM_ROLES_ENV=ADMINISTRADOR_DESTINO,GESTOR_DESTINO,ADMINISTRADOR,GESTOR_SEGITTUR
 
 
 EXPOSE 8080

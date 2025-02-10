@@ -30,6 +30,7 @@
     <module>nuxeo-kerberos-authentication-package</module>
     <module>nuxeo-keycloak-package</module>
     <module>nuxeo-onesaitplatform-keycloak-package</module>
+    <module>nuxeo-onesaitplatform-segittur-keycloak-package</module>
     <module>nuxeo-lang-ext-incomplete-package</module>
     <module>nuxeo-liveconnect-package</module>
     <module>nuxeo-mail-amazon-ses-package</module>

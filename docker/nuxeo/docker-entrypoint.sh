@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-envsubst < /etc/nuxeo/nuxeo.conf.template > /etc/nuxeo/nuxeo.conf
+envsubst '${NUXEO_KEYCLOAK_REALM} ${NUXEO_KEYCLOAK_AUTHSERVERURL} ${NUXEO_KEYCLOAK_RESOURCE} ${NUXEO_KEYCLOAK_PUBLICCLIENT} ${NUXEO_KEYCLOAK_CREDENTIALS_SECRET} ${NUXEO_KEYCLOAK_USERESOURCEROLEMAPPINGS} ${INITIAL_JAVA_OPTS} ${NUXEO_URL} ${NUXEO_DB_NAME} ${NUXEO_DB_USER} ${NUXEO_DB_PASSWORD} ${NUXEO_DB_HOST} ${NUXEO_DB_PORT} ${NUXEO_DB_JDBC_URL} ${NUXEO_DB_DRIVER} ${NUXEO_DB_MIN_POOL_SIZE} ${NUXEO_DB_MAX_POOL_SIZE} ${NUXEO_VCS_MIN_POOL_SIZE} ${NUXEO_VCS_MAX_POOL_SIZE}' < /etc/nuxeo/nuxeo.conf.template > /etc/nuxeo/nuxeo.conf
 
 # expand filename patterns which match no files to a null string, rather than themselves
 shopt -s nullglob

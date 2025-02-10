@@ -807,6 +807,11 @@
       </dependency>
       <dependency>
         <groupId>org.nuxeo.ecm.platform</groupId>
+        <artifactId>nuxeo-platform-login-onesaitplatform-segittur-keycloak</artifactId>
+        <version>${nuxeo.platform.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.nuxeo.ecm.platform</groupId>
         <artifactId>nuxeo-platform-login-saml2</artifactId>
         <version>${nuxeo.platform.version}</version>
       </dependency>
