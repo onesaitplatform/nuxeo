@@ -401,6 +401,16 @@ public class KeycloakAuthenticationPlugin
 	
 	private List<String> getGeneralRoles(AccessToken token) {
 		List<String> allRoles=new ArrayList<String>();
+		
+		//Rol general de clientId onesaitplatform
+		if(token.getOtherClaims().containsKey("role")) {
+        	String role=token.getOtherClaims().get("role").toString();
+        	if(hsAdministrators.contains(role)) {
+        		allRoles.add(ADMINISTRATORS_GROUP_NAME);
+        	}
+        	
+        }
+		
 		//Roles for Destinations
 		if (token.getOtherClaims().containsKey("roles")) {
 			List<Map> pidAuth = (List<Map>) token.getOtherClaims().get("roles");
