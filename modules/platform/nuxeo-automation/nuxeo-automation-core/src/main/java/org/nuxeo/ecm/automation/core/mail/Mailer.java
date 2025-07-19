@@ -297,9 +297,9 @@ public class Mailer {
             }
         }
 
-        public Message setFrom(String from) throws MessagingException {
+        public void setFrom(String from) throws MessagingException {
             setFrom(new InternetAddress(from));
-            return this;
+//            return this;
         }
 
         public void send() throws MessagingException {

@@ -2147,17 +2147,22 @@
         <artifactId>javax.inject</artifactId>
         <version>1</version>
       </dependency>
-      <dependency>
+    <dependency>
         <groupId>javax.mail</groupId>
-        <artifactId>mail</artifactId>
-        <version>1.4.7</version>
+        <artifactId>javax.mail-api</artifactId>
+        <version>1.6.2</version>
         <exclusions>
           <exclusion>
-            <groupId>javax.activation</groupId> <!-- use com.sun.activation:javax.activation instead -->
+            <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
+      <dependency>
+    	<groupId>com.sun.mail</groupId>
+    	<artifactId>javax.mail</artifactId>
+    	<version>1.6.2</version>
+	  </dependency>
       <dependency>
         <groupId>javax.persistence</groupId>
         <artifactId>javax.persistence-api</artifactId>
@@ -5969,6 +5974,16 @@
   </scm>
 
   <repositories>
+	  <repository>
+    	<id>central</id>
+    	<url>https://repo1.maven.org/maven2/</url>
+    	<releases>
+      		<enabled>true</enabled>
+    	</releases>
+    	<snapshots>
+      		<enabled>false</enabled>
+    	</snapshots>
+  	</repository>
     <repository>
       <id>maven-public-lts</id>
       <url>https://packages.nuxeo.com/repository/maven-public-lts/</url>
@@ -5981,6 +5996,8 @@
       </snapshots>
     </repository>
   </repositories>
+  
+  
 
   <pluginRepositories>
     <pluginRepository>

@@ -54,8 +54,11 @@
 
     <dependency>
       <groupId>javax.mail</groupId>
-      <artifactId>mail</artifactId>
-    </dependency>
+      <artifactId>javax.mail-api</artifactId>
+    </dependency><dependency>
+    	<groupId>com.sun.mail</groupId>
+    	<artifactId>javax.mail</artifactId>
+	</dependency>
     <dependency>
       <groupId>com.sun.activation</groupId>
       <artifactId>javax.activation</artifactId>
